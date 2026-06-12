@@ -24,76 +24,378 @@ body
   border-radius: 6px
   line-height: 1.7
 
-.home-hero
-  margin: 14px 12px 18px
-  padding: 26px 28px
-  border-radius: 8px
-  background: #fff
-  box-shadow: 0 10px 32px rgba(16, 24, 40, .06)
-  display: grid
-  grid-template-columns: minmax(0, 1fr) 220px
-  gap: 24px
+.ai-home-hero
+  position: relative
+  overflow: hidden
+  width: 100%
+  min-height: 560px
+  margin-bottom: 34px
+  color: #fff
+  background:
+    radial-gradient(circle at 78% 14%, rgba(132, 230, 255, .72), transparent 26rem),
+    radial-gradient(circle at 46% 18%, rgba(77, 174, 255, .42), transparent 28rem),
+    linear-gradient(135deg, #174bb8 0%, #2577dc 45%, #57c9df 100%)
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .14)
+
+.ai-hero-topbar
+  position: relative
+  z-index: 3
+  min-height: 72px
+  margin: 22px auto 0
+  width: calc(100% - 48px)
+  max-width: 1540px
+  border: 1px solid rgba(255, 255, 255, .14)
+  border-radius: 30px
+  background: rgba(255, 255, 255, .14)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18)
+  backdrop-filter: blur(10px)
+  display: flex
   align-items: center
 
-.home-hero-eyebrow
-  margin: 0 0 8px
-  color: #6b7280
-  font-size: 13px
-  font-weight: 600
+.ai-hero-topnav
+  width: 100%
+  padding: 0 44px
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  gap: 34px
+  font-size: 22px
 
-.home-hero-title
+.ai-hero-topnav a,
+.ai-hero-topnav span
+  color: rgba(255, 255, 255, .9)
+  text-decoration: none
+  white-space: nowrap
+
+.ai-hero-topnav a:hover
+  color: #fff
+  text-decoration: none
+
+.ai-hero-follow
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  border: 1px solid rgba(255, 255, 255, .28)
+  border-radius: 999px
+  padding: 10px 24px
+  background: rgba(255, 255, 255, .08)
+  cursor: default
+
+.ai-hero-content
+  position: relative
+  z-index: 2
+  max-width: 1460px
+  margin: 0 auto
+  padding: 92px 40px 118px
+
+.ai-hero-brand
+  display: flex
+  align-items: center
+  gap: 12px
+  margin-bottom: 54px
+  font-size: 32px
+  font-weight: 700
+  line-height: 1.2
+
+.ai-hero-logo
+  font-size: 28px
+
+.ai-hero-title-wrap h1
+  margin: 0 0 14px
+  color: #fff
+  font-size: 70px
+  font-weight: 800
+  line-height: 1.18
+  letter-spacing: 0
+
+.ai-hero-title-wrap p
+  max-width: 900px
+  margin: 0
+  color: rgba(255, 255, 255, .86)
+  font-size: 22px
+  line-height: 1.8
+
+.ai-hero-qr-card
+  position: absolute
+  top: calc(100% + 24px)
+  left: 50%
+  z-index: 4
+  width: 240px
+  border-radius: 10px
+  padding: 18px 16px 16px
+  background: rgba(255, 255, 255, .96)
+  box-shadow: 0 14px 36px rgba(11, 49, 111, .2)
+  text-align: center
+  opacity: 0
+  pointer-events: none
+  transform: translate(-50%, 8px)
+  transition: opacity .18s ease, transform .18s ease
+
+.ai-hero-follow:hover .ai-hero-qr-card,
+.ai-hero-follow:focus-within .ai-hero-qr-card
+  opacity: 1
+  pointer-events: auto
+  transform: translate(-50%, 0)
+
+.ai-hero-qr-card:before
+  content: ''
+  position: absolute
+  top: -17px
+  left: 50%
+  width: 0
+  height: 0
+  transform: translateX(-50%)
+  border-left: 18px solid transparent
+  border-right: 18px solid transparent
+  border-bottom: 18px solid rgba(255, 255, 255, .96)
+
+.ai-hero-qr-card img
+  display: block
+  width: 190px
+  height: auto
+  border-radius: 8px
+  margin: 0 auto 10px
+
+.ai-hero-qr-card strong
+  color: #2f68aa
+  font-size: 15px
+  line-height: 1.4
+
+.ai-hero-visual
+  position: absolute
+  right: -12px
+  bottom: 76px
+  width: 520px
+  height: 280px
+  opacity: .28
+
+.ai-chip
+  position: absolute
+  right: 120px
+  bottom: 42px
+  width: 190px
+  height: 130px
+  border: 2px solid rgba(255, 255, 255, .22)
+  border-radius: 20px
+  background: rgba(255, 255, 255, .12)
+  box-shadow:
+    0 18px 0 rgba(255, 255, 255, .08),
+    0 36px 0 rgba(255, 255, 255, .05)
+  color: rgba(255, 255, 255, .55)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 58px
+  font-weight: 800
+
+.ai-code
+  position: absolute
+  right: 0
+  bottom: 0
+  width: 112px
+  height: 74px
+  border-radius: 16px
+  background: rgba(255, 255, 255, .13)
+  color: rgba(255, 255, 255, .62)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 28px
+  font-weight: 800
+
+.ai-lines
+  position: absolute
+  right: 0
+  top: 42px
+  width: 140px
+  height: 110px
+  border: 2px solid rgba(255, 255, 255, .16)
+  border-radius: 18px
+
+.ai-lines:before,
+.ai-lines:after
+  content: ''
+  position: absolute
+  left: 30px
+  right: 30px
+  height: 8px
+  border-radius: 999px
+  background: rgba(255, 255, 255, .36)
+
+.ai-lines:before
+  top: 34px
+
+.ai-lines:after
+  top: 58px
+
+.ai-hero-wave
+  position: absolute
+  left: -4%
+  right: -4%
+  bottom: -40px
+  height: 170px
+  opacity: .52
+  background:
+    radial-gradient(ellipse at 42% 0%, transparent 0 46%, rgba(255, 255, 255, .22) 47%, transparent 48%),
+    repeating-radial-gradient(ellipse at 42% 0%, rgba(255, 255, 255, .18) 0 1px, transparent 1px 12px)
+  border-radius: 50% 50% 0 0
+
+.ai-hero-scroll
+  position: absolute
+  left: 50%
+  bottom: 18px
+  z-index: 3
+  width: 28px
+  height: 54px
+  transform: translateX(-50%)
+
+.ai-hero-scroll span
+  display: block
+  width: 24px
+  height: 38px
+  border: 2px solid rgba(255, 255, 255, .78)
+  border-radius: 999px
+
+.ai-hero-scroll span:after
+  content: ''
+  display: block
+  width: 4px
+  height: 4px
+  margin: 8px auto 0
+  border-radius: 50%
+  background: rgba(255, 255, 255, .9)
+
+.ai-hero-scroll i
+  display: block
+  width: 12px
+  height: 12px
+  margin: 2px auto 0
+  border-right: 2px solid rgba(255, 255, 255, .85)
+  border-bottom: 2px solid rgba(255, 255, 255, .85)
+  transform: rotate(45deg)
+
+body.home-page .main
+  padding-top: 0
+
+body.home-page .main-inner
+  margin: 0 auto
+
+body.home-page .post-block:first-child
+  margin-top: 0
+
+.page-intro
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  gap: 24px
+  margin: 0 0 20px
+  border-radius: 8px
+  padding: 24px 28px
+  background:
+    radial-gradient(circle at 94% 12%, rgba(74, 141, 204, .18), transparent 13rem),
+    linear-gradient(135deg, rgba(36, 104, 169, .1), rgba(87, 201, 223, .08))
+  box-shadow: 0 10px 32px rgba(16, 24, 40, .06)
+
+.page-intro-eyebrow
+  margin: 0 0 6px
+  color: #0f766e
+  font-size: 13px
+  font-weight: 700
+  letter-spacing: .06em
+  text-transform: uppercase
+
+.page-intro h1
   margin: 0
   color: #1f2937
   font-size: 28px
-  font-weight: 700
+  font-weight: 760
   line-height: 1.35
 
-.home-hero-desc
-  margin: 10px 0 14px
+.page-intro-desc
+  max-width: 680px
+  margin: 10px 0 0
   color: #4b5563
-  font-size: 16px
-  line-height: 1.75
+  font-size: 15px
+  line-height: 1.8
 
-.home-hero-tags
+.page-intro-nav
   display: flex
   flex-wrap: wrap
+  justify-content: flex-end
   gap: 8px
+  min-width: 300px
 
-.home-hero-tags span
-  border: 1px solid #dbe4ea
+.page-intro-nav a,
+.page-intro-follow
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  border: 1px solid rgba(15, 118, 110, .16)
   border-radius: 999px
-  padding: 4px 9px
+  padding: 6px 12px
+  background: rgba(255, 255, 255, .72)
   color: #0f766e
   font-size: 12px
+  font-weight: 650
   line-height: 1.4
-  background: #f7fbfa
+  text-decoration: none
+  white-space: nowrap
 
-.home-hero-aside
-  display: flex
-  flex-direction: column
-  gap: 8px
-
-.home-hero-aside-title
-  margin: 0 0 2px
-  color: #6b7280
-  font-size: 13px
-  font-weight: 700
-
-.home-hero-aside a,
-.home-hero-aside span
-  display: block
-  border-radius: 6px
-  padding: 8px 10px
-  background: #f3f4f6
-  color: #374151
-  font-size: 13px
-  font-weight: 600
-  line-height: 1.35
-  text-align: center
-
-.home-hero-aside a:hover
+.page-intro-nav a:hover,
+.page-intro-follow:hover
+  border-color: rgba(15, 118, 110, .32)
   background: #0f766e
   color: #fff
+  text-decoration: none
+
+.page-intro-follow
+  cursor: default
+
+.page-intro-qr
+  position: absolute
+  top: calc(100% + 12px)
+  left: 50%
+  z-index: 6
+  width: 174px
+  border-radius: 8px
+  padding: 10px
+  background: rgba(255, 255, 255, .98)
+  box-shadow: 0 14px 32px rgba(16, 24, 40, .16)
+  text-align: center
+  opacity: 0
+  pointer-events: none
+  transform: translate(-50%, 8px)
+  transition: opacity .18s ease, transform .18s ease
+
+.page-intro-follow:hover .page-intro-qr,
+.page-intro-follow:focus-within .page-intro-qr
+  opacity: 1
+  pointer-events: auto
+  transform: translate(-50%, 0)
+
+.page-intro-qr:before
+  content: ''
+  position: absolute
+  top: -10px
+  left: 50%
+  transform: translateX(-50%)
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-bottom: 10px solid rgba(255, 255, 255, .98)
+
+.page-intro-qr img
+  display: block
+  width: 132px
+  height: auto
+  border-radius: 6px
+  margin: 0 auto 7px
+
+.page-intro-qr strong
+  color: #2f68aa
+  font-size: 12px
+  line-height: 1.35
 
 .post-block
   border-radius: 8px
@@ -136,16 +438,78 @@ code
   .site-brand-container
     padding: 22px 16px
 
-  .home-hero
-    margin: 12px 0 16px
-    padding: 22px 18px
-    grid-template-columns: 1fr
+  .ai-home-hero
+    min-height: auto
+    margin-bottom: 24px
 
-  .home-hero-title
-    font-size: 23px
+  .ai-hero-topbar
+    min-height: auto
+    width: calc(100% - 24px)
+    margin-top: 12px
+    border-radius: 18px
 
-  .home-hero-desc
-    font-size: 15px
+  .ai-hero-topnav
+    justify-content: center
+    flex-wrap: wrap
+    gap: 14px
+    padding: 12px 20px
+    font-size: 14px
+
+  .ai-hero-content
+    padding: 32px 20px 64px
+
+  .ai-hero-brand
+    margin-bottom: 28px
+    font-size: 32px
+    font-weight: 700
+
+  .ai-hero-logo
+    font-size: 26px
+
+  .ai-hero-title-wrap h1
+    margin-bottom: 10px
+    font-size: 42px
+
+  .ai-hero-title-wrap p
+    font-size: 16px
+
+  .ai-hero-qr-card
+    top: calc(100% + 16px)
+    width: 200px
+    padding: 14px 12px 12px
+
+  .ai-hero-qr-card img
+    width: 160px
+    height: auto
+
+  .ai-hero-visual
+    display: none
+
+  .ai-hero-scroll
+    display: none
 
   .post-body
     font-size: 15px
+
+  .page-intro
+    display: block
+    padding: 20px
+
+  .page-intro h1
+    font-size: 24px
+
+  .page-intro-nav
+    justify-content: flex-start
+    min-width: 0
+    margin-top: 14px
+
+  .page-intro-qr
+    left: 0
+    transform: translate(0, 8px)
+
+  .page-intro-follow:hover .page-intro-qr,
+  .page-intro-follow:focus-within .page-intro-qr
+    transform: translate(0, 0)
+
+  .page-intro-qr:before
+    left: 28px

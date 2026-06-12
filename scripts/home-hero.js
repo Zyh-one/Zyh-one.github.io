@@ -1,36 +1,50 @@
 'use strict';
 
 const hero = `
-<section class="home-hero" aria-label="profile">
-  <div class="home-hero-main">
-    <p class="home-hero-eyebrow">算子一号 / Zone</p>
-    <h2 class="home-hero-title">AI Infra 学习日志</h2>
-    <p class="home-hero-desc">
-      从 Kernel 到 Inference，记录大模型基础设施的升级打怪之路。
-    </p>
-    <div class="home-hero-tags" aria-label="topics">
-      <span>CUDA Kernel</span>
-      <span>LLM Inference</span>
-      <span>SGLang</span>
-      <span>Systems</span>
+<section class="ai-home-hero" aria-label="AI Infra Notes hero">
+  <div class="ai-hero-topbar">
+    <nav class="ai-hero-topnav" aria-label="external links">
+      <a href="https://github.com/Zyh-one" target="_blank" rel="noopener">GitHub</a>
+      <a href="/archives/">归档</a>
+      <a href="/categories/">分类</a>
+      <a href="/tags/">标签</a>
+      <span class="ai-hero-follow">
+        关注抖音
+        <span class="ai-hero-qr-card">
+          <img src="/images/douyin-qr.jpg" alt="抖音二维码：算子一号">
+          <strong>扫码关注：算子一号</strong>
+        </span>
+      </span>
+    </nav>
+  </div>
+  <div class="ai-hero-content">
+    <div class="ai-hero-copy">
+      <div class="ai-hero-brand">
+        <span class="ai-hero-logo">◎</span>
+        <span>算子一号 · AI Infra Lab</span>
+      </div>
+      <div class="ai-hero-title-wrap">
+        <h1>从 CUDA Kernel 到<br>LLM Inference</h1>
+        <p>记录大模型推理系统、模型并行、KV Cache、SGLang/vLLM 与 AI Infra 工程实践。</p>
+      </div>
+    </div>
+    <div class="ai-hero-visual" aria-hidden="true">
+      <div class="ai-chip">AI</div>
+      <div class="ai-code">&lt;/&gt;</div>
+      <div class="ai-lines"></div>
     </div>
   </div>
-  <div class="home-hero-aside">
-    <p class="home-hero-aside-title">内容入口</p>
-    <a href="https://github.com/Zyh-one" target="_blank" rel="noopener">GitHub 实验</a>
-    <span>抖音 83165780684</span>
-    <a href="/archives/">阅读最新文章</a>
-  </div>
+  <div class="ai-hero-wave" aria-hidden="true"></div>
+  <div class="ai-hero-scroll" aria-hidden="true"><span></span><i></i></div>
 </section>
 `;
 
 hexo.extend.filter.register('after_render:html', function injectHomeHero(str, data) {
-  if (!data || data.path !== 'index.html' || str.includes('class="home-hero"')) {
+  if (!data || data.path !== 'index.html' || str.includes('class="ai-home-hero"')) {
     return str;
   }
 
-  return str.replace(
-    /(<div class="main-inner index posts-expand">\s*)/,
-    `$1${hero}\n`
-  );
+  return str
+    .replace(/<body([^>]*)class="([^"]*)"/, '<body$1class="$2 home-page"')
+    .replace(/(<main class="main">)/, `${hero}\n$1`);
 });
