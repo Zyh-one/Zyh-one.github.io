@@ -5,10 +5,8 @@ tags:
   - AI Infra
 categories:
   - Kernel
+excerpt: 梳理 CUDA 从 Host 发起 kernel 到 Grid、Block、Thread、Warp、SM 的执行层次，作为理解 GPU Kernel 优化的起点。
 ---
-
-
-# CUDA 执行模型基础总结
 
 ## 1. CUDA 执行模型的整体理解
 
@@ -40,6 +38,8 @@ SM
 - 编程时，我们主要看到的是 `grid / block / thread`；
 - 硬件执行时，GPU 实际上以 `warp` 为基本调度单位；
 - `warp` 会被调度到 GPU 芯片上的 `SM` 中执行。
+
+<!-- more -->
 
 ---
 

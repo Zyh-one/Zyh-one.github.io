@@ -1,38 +1,22 @@
 ---
-title: Hello World
+title: Hello AI Infra
+date: 2026-06-12 15:00:00
+tags:
+  - AI Infra
+categories:
+  - Notes
+excerpt: 这个博客用于记录 AI Infra 学习和工程实践，重点关注大模型推理系统、CUDA Kernel 与服务化链路。
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+这个博客用于记录 AI Infra 学习和工程实践，重点关注：
 
-### Create a new post
+- 大模型推理系统
+- CUDA Kernel 与 GPU 执行模型
+- SGLang、KV Cache、调度与服务指标
+- 工程实现中的问题拆解与复盘
 
-``` bash
-$ hexo new "My New Post"
-```
+<!-- more -->
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+我希望它不只是零散笔记，而是逐步沉淀成一份面向长期复习、项目实践和技术表达的知识索引。
 
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+后续会优先围绕推理性能、Kernel 优化、系统调度和部署链路展开。
